@@ -141,3 +141,81 @@ Java提供了一个Thread基类和一个Runnable接口；这两个元素就构�
 * 基类的重要功能：提供默认（预设）行为，也称为Hook Function。
 * 基类可事先定义许多【默认】（Default）函数。这些默认函数可让子类来继承（或调用）之。
 
+
+## 04 - 复习基本OOP知识d ##
+
+### 6、主动型 vs 被动型API ###
+
+卡榫函数实现API：我们也称为主动型API
+
+被动型API：子类调用父类的方法，即正向调用，称之为被动型API。
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/12androidInheritanceSystem.png)</center>
+
+API的分类：
+
+* API这个名词，有3个密切关联的动词：
+
+	定义（Define）
+	实作（Implement）
+	呼叫（Invoke or Call）
+
+* 根据这3个角度，可将API区分为【主动型】与【被动型】两种
+
+	被动型API：子类的函数调用基类的函数
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/13androidInheritanceSystem.png)</center>
+
+	主动型API： 相反，基类调用子类实现的接口，控制反转
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/14androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/15androidInheritanceSystem.png)</center>
+
+
+API===>控制力：
+
+* 大家都知道。接口（Interface）是双方接口的地方，也是双方实力或地盘的界线。
+* 谁拥有接口的定制权，谁就掌握控制点，就能获得较大的主动权（或称为主导权），而位于强龙地位；而另一方则处于被动地位，成为弱势的一方，扮演地头蛇角色。
+
+
+API的范例（Android）
+
+* 范例1：接口是谷歌定义：onCreate（卡榫函数）
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/16androidInheritanceSystem.png)</center>
+
+
+	谷歌是强龙，Activity的子类是地头蛇，其实事实上是基类Activity调用子类，也就是主动API
+
+
+* 范例2：
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/17androidInheritanceSystem.png)</center>
+
+
+* 范例说明：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/18androidInheritanceSystem.png)</center>
+
+
+### 7、结语与复习：接口与类 ###
+
+接口的表示：
+
+* 在OOP里，将接口定义为一种特别的类别（Class）
+* 在C++里，类别包括3种：
+	1、一般（具象）类别
+		所有函数都是具象（内有指令）
+
+	2、抽象（abstract）类别
+		有一个或多个函数是抽象的（内无指令）
+
+	3、纯粹抽象（pure abstract）类别
+		所有函数都是抽象的。我们也称为接口
+
+* 在Java里，将上述的纯粹抽象类别称为接口（Interface）
+
+* 在UML里，以圆圈来表示接口
+
