@@ -206,6 +206,8 @@ API的范例（Android）
 
 * 在OOP里，将接口定义为一种特别的类别（Class）
 * 在C++里，类别包括3种：
+
+
 	1、一般（具象）类别
 		所有函数都是具象（内有指令）
 
@@ -218,4 +220,68 @@ API的范例（Android）
 * 在Java里，将上述的纯粹抽象类别称为接口（Interface）
 
 * 在UML里，以圆圈来表示接口
+
+## 05 - 架构设计的UML图形思考a ##
+
+### 1、架构设计的UML图形思考（Graphic Thinking） ###
+
+> 假如一个产品，需要十个月的开发时间，那么，架构师在第一个月内就要把产品的蓝图给设计出来，让之后的9个月内，开发者可以都围绕这个蓝图来开发，这就是架构设计。
+
+1.建模与图形思考
+
+* 架构师（Architect）的职责就是创意设计与人际沟通。在规划架构或框架的阶段，还没开始动工撰写Android程序码，那么架构师如何进行创意思考呢？又如何将创意设计表达出来，争取自己公司老板和业主的支持（例如投资）呢？
+* 身为架构师，其图形绘制和思考能力越好，其创意设计与人际沟通的能力越好，因此，培养Android架构师的图形思考能力是极为重要的。
+
+
+
+2.UML软件图形语言和工具
+
+> 图形思考的表达：图形语言
+
+* 图形建模：模型（Model）内含一组基本概念，及其之间关系；如果以图形表示出来，就能发挥图形思考的效益了。
+* UML图形语言，协助架构师发挥其图形思考，表达出系统架构（Architecture）的模型。
+* 由于人们对这些图形元素有了共同的认知，所以系统架构之描述（即模型）也就成为人与人之间可以认知和理解的东西。因而，人与人之间采用共同的（图形）模型时，就易于沟通，易于互相合作了。
+
+> 软件：UML是一种图形语言
+
+* 模型的建立，可以协助软件人员进一步了解系统。
+* UML是一个很好的图形语言，也有很多UML建模工具，对于Android架构师或者开发者来说，都是非常重要的。无论是培养图形思考或者团队沟通上，对于Android软件出创意或管理上，是无可取代的。
+
+
+红路灯控制软件的UML建模范例
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/19androidInheritanceSystem.png)</center>
+
+五子棋游戏软件的UML建模范例
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/20androidInheritanceSystem.png)</center>
+
+> UML的建模工具
+
+* Astah Professional（原名JUDE）是UML建模工具。以下是该工具支持的UML图形
+
+	* Class Diagram （类别图）
+	* Use Case Diagram（用例图）
+	* Statemachine Diagram*（状态机图）
+	* Sequence Diagram（顺序图）
+	* Activity Diagram（活动图）
+	* Communication Diagram（通信图）
+	* Component Diagram（模块图）
+	* Deployment Diagram（部署图）
+	* Composite Structure Diagram（组合结构图）
+
+
+
+
+
+3.绘制UML类别图：表达（基类\子类）
+
+
+
+
+4.绘制UML类别图：表达接口（Interface）
+5.演练：UML的类别与接口
+
+
 
