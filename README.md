@@ -223,18 +223,16 @@ API的范例（Android）
 
 ## 05 - 架构设计的UML图形思考a ##
 
-### 1、架构设计的UML图形思考（Graphic Thinking） ###
-
 > 假如一个产品，需要十个月的开发时间，那么，架构师在第一个月内就要把产品的蓝图给设计出来，让之后的9个月内，开发者可以都围绕这个蓝图来开发，这就是架构设计。
 
-1.建模与图形思考
+### 1.建模与图形思考 ###
 
 * 架构师（Architect）的职责就是创意设计与人际沟通。在规划架构或框架的阶段，还没开始动工撰写Android程序码，那么架构师如何进行创意思考呢？又如何将创意设计表达出来，争取自己公司老板和业主的支持（例如投资）呢？
 * 身为架构师，其图形绘制和思考能力越好，其创意设计与人际沟通的能力越好，因此，培养Android架构师的图形思考能力是极为重要的。
 
 
 
-2.UML软件图形语言和工具
+### 2.UML软件图形语言和工具 ###
 
 > 图形思考的表达：图形语言
 
@@ -272,16 +270,95 @@ API的范例（Android）
 	* Composite Structure Diagram（组合结构图）
 
 
+## 06 - 架构设计的UML图形思考b ##
+
+### 3.绘制UML类别图：表达（基类\子类） ###
+
+* 启动了Astah，在主画面上点选<Diagram>，出现，
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/21androidInheritanceSystem.png)</center>
+
+* 接着，点选<Class D iagram> ，就会出现一张空白的类别图，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/22androidInheritanceSystem.png)</center>
+
+* 在空白的类别图上方，有一排类别图的元素（Element），简称[图素]，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/23androidInheritanceSystem.png)</center>
+
+* 此列元素中的左边第二个就是【类别】（Class）图素。当你点选此图素（如上图所示），然后移动鼠标（Cursor）到图表里的特定位置，并按下鼠标左键，就在图表里出现一个类别图素，如下：
 
 
-
-3.绘制UML类别图：表达（基类\子类）
-
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/24androidInheritanceSystem.png)</center>
 
 
+> 画出基类的图形
 
-4.绘制UML类别图：表达接口（Interface）
-5.演练：UML的类别与接口
+* 这就是在Android程序里，大家都熟悉的Activity基类，例如：大家都熟悉的Android代码片段：
+
+		public class myActivity extends Activity{
+			//...
+			//....
+		}
+
+* 这让你输入类名的名称，例如取名为：Activity类别，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/25androidInheritanceSystem.png)</center>
+
+* 这样的图文对照，能有效培养架构师的图形思考和创意，提升架构师与项目经理、业主的沟通能力。在图形上，也能增加美感，培养架构师对软硬件的感觉（Feeling）而不是只能逻辑的理解（Understanding）。有助于与设计师进行创意交流。
+* 例如，点选这个Activity类别图素，并按右键；出现如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/26androidInheritanceSystem.png)</center>
+
+* 于是，可以选择<Set Color> 选项来改变图素的颜色（Color）。此时，出现如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/27androidInheritanceSystem.png)</center>
+
+* 就能任选所喜欢的颜色了，例如，选取粉色颜色，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/28androidInheritanceSystem.png)</center>
+
+> 画出子类的图形
+
+* 这就是在Android程序里，大家都熟悉的Activity的子类（Subclass）。例如，大家很熟悉Android代码片段。
+
+		public class myActivity extends Activity{
+			//...
+			//...
+		}
+
+* 在空白的类别图上方，有一排类别图的元素（Element），简称【图素】，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/29androidInheritanceSystem.png)</center>
+
+* 依据同样的过程，可以再拉出一个myActivity类别的图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/30androidInheritanceSystem.png)</center>
+
+> 画出基类\子类之间的<扩充>关系图形。
+
+* 就建立了两个类别之间的<Generation> 关系，这又称为【继承】（Inheritance）关系，或称为【扩充】（Extend）关系。如果再对照到大家所熟悉的代码：
+
+		public class myActivity extends Activity{
+			//.....
+			//.....
+		}
+
+* 接着，可以在图形上表达两个类别之间的关系（Relationship）。例如，选取<Generation>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/31androidInheritanceSystem.png)</center>
+
+* 请点选了这个图素，接着将鼠标移动到myActivity类别图素，按住并拖拉到Activity类别图素才放开，就出现： 
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/32androidInheritanceSystem.png)</center>
+
+* 上图就表达了这段代码里，Activity与myActivity之间的扩充关系了。
+* 由于Activity是由Google团队所撰写的，属于框架（Framework）的一部分；而myActivity则是由一般应用（App）开发者所撰写的。
+
+### 4.绘制UML类别图：表达接口（Interface） ###
+
+
+### 5.演练：UML的类别与接口 ###
 
 
 
