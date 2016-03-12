@@ -22,14 +22,14 @@
 
 在安卓中的继承例子：
 
-<center>![](1androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/1androidInheritanceSystem.png)</center>
 
-<center>![](2androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/2androidInheritanceSystem.png)</center>
 
 
 Android另外一个例子（其例子说白了就是新函数调用旧函数）：
 
-<center>![](3androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/3androidInheritanceSystem.png)</center>
 
 
 由此看出，基类和子类构成了我们的app
@@ -42,24 +42,24 @@ Android另外一个例子（其例子说白了就是新函数调用旧函数）�
 
 Java提供了一个Thread基类和一个Runnable接口；这两个元素就构成一个框架
 
-<center>![](4androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/4androidInheritanceSystem.png)</center>
 
 然后Tasks实现Runnable接口：
 
-<center>![](5androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/5androidInheritanceSystem.png)</center>
 
 	于此图里，框架的Thread基类会先诞生一个小线程，然后该小线程透过Runnable接口，呼叫（或者执行）了Tasks类别的run()函数
 
-<center>![](6androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/6androidInheritanceSystem.png)</center>
 
 	由以上几个环节总结出：首先就是说Thread里定义了一个接口Runnable，而Tasks只要遵循Thread给的接口Runnable去实现它，那么Thread的对象就可以和Tasks搭配起来去使用了。（重点）
 
 
 而以下这种结构是继承的结构，而不是表达组合的结构
 
-<center>![](8androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/8androidInheritanceSystem.png)</center>
 
-<center>![](9androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/9androidInheritanceSystem.png)</center>
 
 ## 03 - 复习基本OOP知识c ##
 
@@ -76,7 +76,7 @@ Java提供了一个Thread基类和一个Runnable接口；这两个元素就构�
 
 > Template Method设计模式【GoF】
 
-<center>![](10androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/10androidInheritanceSystem.png)</center>
 
 
 基类与子类到底如何分类：
@@ -123,7 +123,7 @@ Java提供了一个Thread基类和一个Runnable接口；这两个元素就构�
 			}
 		}
 
-<center>![](11androidInheritanceSystem.png)</center>
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/11androidInheritanceSystem.png)</center>
 
 由此看出，背景是有基类来实现，而前景是由子类来实现。
 
