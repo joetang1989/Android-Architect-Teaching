@@ -592,4 +592,44 @@ API的范例（Android）
 
 * Step-5：还可以继续联想下去，例如【沙拉】又可以细分为水果沙拉、凯萨沙拉等等，则整个UML类别图，就更加完整了。
 
-### 5.讨论：模型与代码 ###
+
+## 10 - 业务内涵的分析抽象&表达c ##
+
+### 5.举例（四）：五子棋 ###
+
+> 【五子棋】的分析步骤
+
+* Step-1：找到主角--棋子手
+
+	* 很容易发现核心的概念，例如：五子棋游戏的主角是棋手（玩家），棋手有两种--电脑和人；其中，电脑棋手又分为数个不同棋力等级，例如：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/66androidInheritanceSystem.png)</center>
+
+* Step-2：抽象出抽象类别（Superclass）--BaseAI：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/67androidInheritanceSystem.png)</center>
+
+* Step-3：再增添一种棋子手--HumanPlayer（人），而且再度进行抽象，得到：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/68androidInheritanceSystem.png)</center>
+
+* Step-4：再联想到人之外的物---棋盘（ChessBoard），它必须呈现出UI画面上，所以设计成为View的子类别，得到：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/69androidInheritanceSystem.png)</center>
+
+* Step-5：再从棋盘联想到相关的概念--棋（Chess）；以及用来控制UI显示的GobangActivity类别，如下图。
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/70androidInheritanceSystem.png)</center>
+
+* Step-6：还可以继续联想下去，就更加完整了。
+
+### 6、讨论：模型与代码 ###
+
+* 在传统观点里，大多先绘制UML模型图，然后才开始构思程序码的撰写，使得UML建模成为撰写程序码的前置工作，因此许多程序员将UML建模视为多余的负担。为了节省开发成本，就将省略掉UML建模的工作了。
+
+		Domain-->Concepts--->class-->UML-->code
+
+* 在新潮的观点里，UML模型与代码是软件系统本体的两个观点（或面向），两者没有先后顺序关系，而是并存和兼具于同一个人的脑海里。这就像两只眼睛看到的景象并存于一个人的脑海里一般，如此才能看到更真实的世界，也能做出更完美的软件系统来。
+
+
+
