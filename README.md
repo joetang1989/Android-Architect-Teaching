@@ -355,10 +355,144 @@ API的范例（Android）
 * 上图就表达了这段代码里，Activity与myActivity之间的扩充关系了。
 * 由于Activity是由Google团队所撰写的，属于框架（Framework）的一部分；而myActivity则是由一般应用（App）开发者所撰写的。
 
+## 07 - 架构设计的UML图形思考c ##
+
 ### 4.绘制UML类别图：表达接口（Interface） ###
 
+> 接口的表达
+
+* 对于架构师而言，【接口】（Interface）的角色比【类别】（Class）来得重要的多，
+* 例如，对照到大家所熟悉的代码：
+
+		public class myActivity extends Activity implements OnClickListener{
+			//.,,,,,
+			//,,,,,
+		}
+
+* 于是，就来看看如何将接口图素呈现类别图上。例如，选取<Interface>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/33androidInheritanceSystem.png)</center>
+
+* 点选了这个<Interface>图素，接着将鼠标移动到类别图里的任何位置，并按键，出现如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/34androidInheritanceSystem.png)</center>
+
+* 就可以填入接口的名称了，例如：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/35androidInheritanceSystem.png)</center>
+
+> 接口的注释
+
+* 可选取<Note>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/36androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/37androidInheritanceSystem.png)</center>
+
+* 接着，可选取<NoteAnchor>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/38androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/39androidInheritanceSystem.png)</center>
+
+> 类<实现>接口的表达
+
+* 对照到大家所熟悉的代码：
+
+		public class myActivity extends Activity implements OnClickListener{
+			//.,,,,,
+			//,,,,,
+		}
+
+* 接着，可以在图形上表达类别与接口之间的关系，例如，选取<Association>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/40androidInheritanceSystem.png)</center>
+
+* 先点选这个图素，从myActivity拉出一条线到OnClickListener接口，出现
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/41androidInheritanceSystem.png)</center>
+
+* 此关系说明了：myActivity类别【实现】了OnClickListener接口。其意味着，myActivity类别里含有一个实现函数：onClick（）函数，如下图：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/42androidInheritanceSystem.png)</center>
+
+
+> 接口的使用（调用接口的函数）
+
+* myActivity实现了onClickListener接口之后，其他类别就能透过此接口来调用myActivity里的onClick（）函数。
+
+范例（Android）：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/43androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/44androidInheritanceSystem.png)</center>
+
+* 接着，可选取<Association>图素，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/45androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/46androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/47androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/48androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/49androidInheritanceSystem.png)</center>
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/50androidInheritanceSystem.png)</center>
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/51androidInheritanceSystem.png)</center>
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/52androidInheritanceSystem.png)</center>
+
+* 这表达出：当人们按下屏幕画面上的按钮时，Android框架（及其幕后的系统服务）会透过OnClickListener接口而调用了myActivity类别里的onClick()函数
 
 ### 5.演练：UML的类别与接口 ###
 
+> 接口的表示
+
+* 在OOP里，将接口定义为一种特殊的类别（Class）
+
+* 如果一个类别的某些函数是抽象函数的话，就称为【抽象函数】（Abstract Class）。如果一个抽象类别，它的所有的函数全部都是抽象函数的话，就称为【纯粹抽象类别】（Pure Abstract Class）；这种类别又称为【接口】（Interface）。
+
+* 在C++里，类别包括3种：
 
 
+	1、一般（具象）类别
+		所有函数都是具象（内有指令）
+
+	2、抽象（abstract）类别
+		有一个或多个函数是抽象的（内无指令）
+
+	3、纯粹抽象（pure abstract）类别
+		所有函数都是抽象的。我们也称为接口
+
+* 在Java里，将上述的纯粹抽象类别称为接口（Interface）
+
+* 在UML里，以圆圈来表示接口
+
+* 请问，下图的Counter是一个什么类别呢？
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/53androidInheritanceSystem.png)</center>
+
+		Counter是抽象类
+
+* 请问，下图里的Counter是一个什么类别呢？
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/54androidInheritanceSystem.png)</center>
+
+		Counter是接口
+
+* 上图相当于（也能表示为）下图，理由是什么？
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/55androidInheritanceSystem.png)</center>
+
+* 请说明下图的含义：
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/56androidInheritanceSystem.png)</center>
+
+		首先，有两个接口IA和ICounter，而类ac01实现了接口IA，myCounter实现了接口ICounter，而ac01调用了接口ICounter中的方法request()，myCounter调用了接口IA中的方法setN()，所以，在子类ac01中，先运行方法request()，然后再运行setN()方法。
