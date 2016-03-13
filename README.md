@@ -1,5 +1,7 @@
 # android 架构师 （Android Architect Teaching）#
 
+> 高焕堂（台湾）
+
 ## 01 - 复习基本OOP知识a ##
 
 ### 1.面向对象是什么 ###
@@ -496,3 +498,98 @@ API的范例（Android）
 <center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/56androidInheritanceSystem.png)</center>
 
 		首先，有两个接口IA和ICounter，而类ac01实现了接口IA，myCounter实现了接口ICounter，而ac01调用了接口ICounter中的方法request()，myCounter调用了接口IA中的方法setN()，所以，在子类ac01中，先运行方法request()，然后再运行setN()方法。
+
+## 08 - 业务内涵的分析抽象&表达a ##
+
+### 1.系统分析（System Analysis） ###
+
+> 系统分析的含义：
+
+* 许多人在学习系统分析（SA）时，常迷失于其字面上的意义，以为分析的对象是【系统】，这是一种常见的迷思！其实，分析的对象是系统所处的【业务领域知识】（Domain Konwledge）才是正确的。就如同计算机专家James Martin所说：
+
+		【OOA（Object-oriented analysis）不是要去分析实际的系统；而是用来分析人们对系统的专业认知和做法----从收集到的领域概念来分析出业务内涵。】
+
+> 业务（领域）知识=业务内涵
+
+* 所以系统分析的主要对象并非【系统】本身，而是分析专家们如何以其专业知识来叙述系统，亦即，专家心中的【业务（领域）知识】才是系统分析的主要对象。所以焦点是业务知识（Domain Konwledge），而不是系统。
+
+> 业务（领域）概念
+
+* 知识的组成要素是【概念】（Concepts）
+
+* 领域知识（Domain Knowledge）的组成要素是领域概念（Domain Concepts）。
+* 概念（相对于系统中的类）有它的属性（Attribute），我们可以把其属性分为两类（static和dynamic），static就相当于类中的data，而Dynamic就相当于类中的method。概念之间有其关系（Relationship）
+* 系统分析（或OOA）就是要分析领域知识里的概念，并以UML的类别（Class）等示来表示之。
+* 概念（Concept）是抽象的，代表一群实体，是沟通的重要媒介。例如：【请买杯咖啡】，咖啡是个概念，具有这种概念的人，都会了解这句话的意思。他会凭其经验而想到真是的咖啡。
+* 概念代表一个群体----【类别】（Class），人们藉由天赋的能力运用经验去想到其所代表的实际东西---【对象】（Object）。
+* 例如您听到【买一只吉他】，这【吉他】（Class）概念让您想到经验中的吉他，而去乐器行买一只【真是的吉他】（Object）回家。
+* 找出领域知识里的概念，就是找出软件系统的对象和类别。
+* 例如麦当劳企业有汉堡、薯条、玩具、特餐、点餐、订购玩具、顾客、员工、玩具商、分店等等的概念，将对应到软件系统的类别，所以在麦当劳的软件系统里就会有汉堡、薯条、玩具、特餐、点餐、订购玩具、顾客、员工、玩具商、分店等等的类别。
+* 【概念是人人互相分享的。概念提供了能让人人互相了解的共通词汇。】
+* 例如【收据】是个重要的商业概念。在商店里，【收据】代表能归还所购货品的权利，也是人皆知道的，人们也知道实际收据的模样。这样的概念，自然称为人们沟通的主要字汇。
+
+
+
+### 2.举例（一）：东方传说 ###
+
+> UML与建模工具
+
+* 【后羿从西王母处请来不死之药，嫦娥偷吃了这颗灵药，成仙了，身不由主飘飘然地飞往月宫之中，在那荒芜的月宫之中度着无边的寂寞岁月。】
+* 虽然嫦娥可能是传说虚构的，并非事实，但是确确实实是我们心中的清晰概念，传说中的主角，所以是个重要的类别，表示如下： 
+
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/57androidInheritanceSystem.png)</center>
+
+* 跟【嫦娥】具有密切关联的概念是：月亮和仙丹。常表达如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/58androidInheritanceSystem.png)</center>
+
+* 不仅上述的名词概念而已，其攸关的动作也常是重要概念。动词常常代表一项事件（Event）的发生，而人们常从人、事、时、地、物等去描述一个事情的发生情境。
+* 譬如，吃仙丹就有动作（吃）的对象---仙丹，动作的主角--嫦娥，当然还有地点、时间，甚至仙丹来源等等。
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/59androidInheritanceSystem.png)</center>
+
+## 09 - 业务内涵的分析抽象&表达b ##
+
+### 3.举例（二）：西方通话 ###
+
+> 通话【青蛙王子】的故事
+
+* 从前有一位美丽的公主，喜欢玩金球。有一天，不小心让球滚进了井里。她哭泣了，青蛙向她说：我可以帮你捡起金球。但是我希望跟你约会。。。
+* 如果约会时，公主心情好又亲吻青蛙的话，青蛙可能摇身一变成为一位英俊的王子。从此王子、公主过着快乐的日子。
+
+> 故事的概念
+
+* 这很容易找到几个核心的概念，例如：青蛙、公主等是用以描述事实的概念，而王子是用来描述未来可能成真的概念；还有约会、亲吻等动作也都是显而易见重要概念。
+* 如此，就更明显地看出来故事的主角是：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/60androidInheritanceSystem.png)</center>
+
+* 他希望公主亲她，所以又找到两个概念：亲吻和公主。
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/61androidInheritanceSystem.png)</center>
+
+* 一旦公主亲吻了青蛙，他就变成王子，于是又找到一个新概念了：王子。虽然青蛙和王子是一体的两个身份，其在人们的知识里，仍然是两个不同的概念。随着找到的概念不断地增多，类别图就不断地扩大，如下：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/62androidInheritanceSystem.png)</center>
+
+### 4.举例（三）：点餐服务 ###
+
+> 【餐馆点餐服务】的分析步骤：
+
+* Step-1：从最明显的重要事情出发。例如，餐厅人员与客人沟通的主要交易是【点餐】：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/63androidInheritanceSystem.png)</center>
+
+* Step-2：联想到【OrderLine】和【餐点】：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/64androidInheritanceSystem.png)</center>
+
+* Step-3：从餐点联想到它可分为【单点菜色】，以及【套餐】两大分类。
+* Step-4：从单点菜色又分为【牛排】、【沙拉】和【饮料】等不同之分类，这些都是重要的领域概念。于是得到美好的类别图。如下图：
+
+<center>![](https://raw.githubusercontent.com/faithyee/Android-Architect-Teaching/master/img/65androidInheritanceSystem.png)</center>
+
+* Step-5：还可以继续联想下去，例如【沙拉】又可以细分为水果沙拉、凯萨沙拉等等，则整个UML类别图，就更加完整了。
+
+### 5.讨论：模型与代码 ###
